@@ -1,10 +1,10 @@
 Created by Jammi Dee
-Date: 12/30/2023
+Date: 03/10/2024
 
 La Kubo tron
 La - lalula
 kubo - frame
-tron - electron
+rag - regenerative augmented generation
 
 **Make sure to install the NodeJS preferbly LTS
 **Install the latest VSCode
@@ -94,11 +94,12 @@ git config --global user.email "jammi_dee@yahoo.com"
 git config --global user.name "Jammi Dee"
 git commit -m "Initial commit Lalulla Framework for AI Regenerative Augmented Generation (RAG)"  # Commit your changes
 git branch -M main  # Rename the default branch to 'main'
-git remote add origin https://github.com/jammidee/laframetron.git  # Replace with your GitHub repository URL
+git remote add origin https://github.com/jammidee/laframerag.git  # Replace with your GitHub repository URL
 git pull origin main  #if there is error in push
 git pull origin main --allow-unrelated-histories #if there are errors
 git push -u origin main  # Push your code to GitHub
 git rm -r --cached logs
+git remote -v
 
 git status
 git log
