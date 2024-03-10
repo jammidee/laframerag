@@ -1,10 +1,10 @@
-# Laframetron
+# Laframerag
 
-Laframetron is an Electron application template meticulously crafted to expedite the initiation of new Electron projects. This boilerplate equips developers with pre-configured common initializations and processes, empowering them to jumpstart their projects with enhanced efficiency.
+Laframerag is an Electron application template meticulously crafted to expedite the initiation of new Electron projects using NLP and AI for RAG. This boilerplate equips developers with pre-configured common initializations and processes, empowering them to jumpstart their projects with enhanced efficiency.
 
 ## Project Overview
 
-Laframetron is an ElectronJS boilerplate specifically tailored for desktop application development.
+Laframerag is an ElectronJS boilerplate specifically tailored for desktop application development, NLP and AI for RAG.
 
 ## Goal / Purpose
 
@@ -42,9 +42,9 @@ Laframetron is enriched with the following libraries to elevate your Electron ap
 
 ## Getting Started
 
-To harness the power of Laframetron as the foundation for your new Electron app, follow these straightforward steps:
+To harness the power of Laframerag as the foundation for your new Electron app, follow these straightforward steps:
 
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/your-username/laframetron.git
+   git clone https://github.com/your-username/laframerag.git
