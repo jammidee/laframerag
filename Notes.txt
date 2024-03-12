@@ -1,7 +1,7 @@
 Created by Jammi Dee
 Date: 03/10/2024
 
-La Kubo tron
+La Kubo RAG
 La - lalula
 kubo - frame
 rag - regenerative augmented generation
@@ -13,7 +13,7 @@ rag - regenerative augmented generation
 
    npx create-electron-app@latest lakubotron
 
- 	cd lakubotron
+ 	cd lakuborag
 
 2. To start electron, just run
 
