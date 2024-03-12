@@ -1,7 +1,7 @@
 {
   "name": "lakuborag",
   "productName": "lakuborag",
-  "version": "1.5.142",
+  "version": "1.5.143",
   "description": "Lalulla AI Retrieval Augmented Generation (RAG) Boilerplate",
   "main": "src/index.js",
   "scripts": {

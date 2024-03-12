@@ -11,6 +11,7 @@ Developed / Programmed by : Joel Margate Damaso aka Jammi Dee
 Tested / QA by:				Jammi Dee
 
 03/12/2024  - started clean up of the migrated report
+            - Initial Chat UI design started
             - 
 
 03/11/2024  - forked lakubotron to lakuborag

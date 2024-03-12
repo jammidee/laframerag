@@ -49,7 +49,7 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         border-radius: 8px;
         padding: 20px;
-        /* max-width: 800px; */
+        max-width: 800px;
         width: 100%;
       }
   
@@ -100,8 +100,6 @@
         background-color: #45a049;
       }
 
-
-
       /* Style for the chat container */
       .chat-container {
         display: flex;
@@ -109,32 +107,7 @@
         height: 80vh; /* Set the height of the chat container */
         overflow-y: auto; /* Enable vertical scrolling when content overflows */
         padding: 10px;
-        width: 60%; /* Adjust the width of the chat container */
-        margin: 0 auto; /* Center the chat container horizontally */
-        border-radius: 10px; /* Add rounded corners */
-        background-color: #f8f8f8; /* Add background color */
       }
-
-      /* Thin scrollbar */
-      .chat-container::-webkit-scrollbar {
-        width: 5px; /* Set the width of the scrollbar */
-      }
-
-      /* Track */
-      .chat-container::-webkit-scrollbar-track {
-        background: #f1f1f1; /* Color of the scrollbar track */
-      }
-
-      /* Handle */
-      .chat-container::-webkit-scrollbar-thumb {
-        background: #c1bfbf; /* Color of the scrollbar handle */
-        border-radius: 5px; /* Roundness of the scrollbar handle */
-      }
-
-      /* Handle on hover */
-      .chat-container::-webkit-scrollbar-thumb:hover {
-        background: #555; /* Color of the scrollbar handle on hover */
-      }      
 
       /* Style for the chat messages */
       .chat-messages {
@@ -154,29 +127,6 @@
         border-radius: 4px;
       }
 
-      .chat-input {
-        display: flex;
-        align-items: center;
-        margin-top: 10px;
-      }
-
-      .chat-input input {
-        flex: 1; /* Let the input field take remaining space */
-        padding: 8px;
-        border-radius: 20px; /* Add rounded corners to the input field */
-        border: 1px solid #ccc;
-        margin-right: 10px; /* Add spacing between input and button */
-      }
-
-      .chat-input button {
-        padding: 8px 16px;
-        background-color: #4caf50;
-        color: #fff;
-        border: none;
-        border-radius: 20px; /* Add rounded corners to the button */
-        cursor: pointer;
-      }
-
 
     </style>
     <!-- <link rel="stylesheet" href="./css/fa.all.min.css" /> -->
@@ -184,106 +134,184 @@
     <link rel="stylesheet" href="./css/bootstrap/dist/css/bootstrap.min.css">
   </head>
   <body>
+    <!-- <div class="title-bar">
+      Your App Title
+    </div> -->
+    <div class="flex-container">
+      <div id="welcome" class="paper-area">
+        <center>
+          <h2>🌟Welcome to Laframetron</h2>
+        </center>
+        <center>
+          <p>
+            This serves as a front-end template tailored for desktop development, leveraging ElectronJS within the Lalulla Framework.
+          </p>
+        </center>
+      </div>
+  
+      <!-- deviceID, driveCSerial, macAddress, macid -->
+      <div id="gathered-info" class="paper-area">
+        <div>
+          <table>
+            <tr>
+              <td>
+                <p id="wsid"><i class="fas fa-atom"></i>DEVICE ID </p>
+              </td>
+              <td>
+                <p id="hddid"><i class="fas fa-atom"></i>STORAGE SN </p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p id="macaddr"><i class="fas fa-atom"></i>MAC ADDRESS </p>
+              </td>
+              <td>
+                <p id="servertime"><i class="fas fa-atom"></i>SERVER TIME</p>
+              </td>
+            </tr>
+          </table>
+          <!-- <p id="wsid"><i class="fas fa-atom"></i>DEVICE ID </p>
+          <p id="hddid"><i class="fas fa-atom"></i>STORAGE SN </p>
+          <p id="macaddr"><i class="fas fa-atom"></i>MAC ADDRESS </p>
+          <p id="servertime"><i class="fas fa-atom"></i>SERVER TIME</p> -->
+          <!-- <p id="machid"><i class="fas fa-atom"></i>MACH ID </p> -->
+        </div>
+      </div>
+      <br>
+      <div id="hightlight" class="paper-area">
+        <div>
+          <h4>💖 Hello World!</h4>
+          <p>Welcome to your ElectronJS boilerplate by Lalulla.</p>
+          <table>
+            <tr>
+              <td>
+                <p>🌟 Star: Represents excellence, achievement, or special recognition.</p>
+              </td>
+              <td>
+                <p>🔥 Fire: Indicates something that is trendy, hot, or on fire.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>👍 Thumbs Up: A positive gesture or agreement.</p>
+              </td>
+              <td>
+                <p>🌈 Rainbow: Symbolizes diversity, inclusivity, or positivity.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>❤️ Red Heart: Represents love, affection, or approval.</p>
+              </td>
+              <td>
+                p><i class="fas fa-atom"></i> Welcome to your Electron application.</p>
+              </td>
+            </tr>
+          </table>
+          <!-- <p>🌟 Star: Represents excellence, achievement, or special recognition.</p>
+          <p>🔥 Fire: Indicates something that is trendy, hot, or on fire.</p>
+          <p>👍 Thumbs Up: A positive gesture or agreement.</p>
+          <p>🌈 Rainbow: Symbolizes diversity, inclusivity, or positivity.</p>
+          <p>❤️ Red Heart: Represents love, affection, or approval.</p>
+          <p><i class="fas fa-atom"></i> Welcome to your Electron application.</p> -->
+          <button class="btn btn-primary">Click me - a Bootstrap Button</button>
+        </div>
+      </div>
+      <br>
+
+      <div id="hightlight" class="paper-area">
+        <div>
+          <h4>💖 Hello World!</h4>
+          <p>Welcome to your ElectronJS boilerplate by Lalulla.</p>
+          <table>
+            <tr>
+              <td>
+                <p>🌟 Star: Represents excellence, achievement, or special recognition.</p>
+              </td>
+              <td>
+                <p>🔥 Fire: Indicates something that is trendy, hot, or on fire.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>👍 Thumbs Up: A positive gesture or agreement.</p>
+              </td>
+              <td>
+                <p>🌈 Rainbow: Symbolizes diversity, inclusivity, or positivity.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>❤️ Red Heart: Represents love, affection, or approval.</p>
+              </td>
+              <td>
+                p><i class="fas fa-atom"></i> Welcome to your Electron application.</p>
+              </td>
+            </tr>
+          </table>
+          <!-- <p>🌟 Star: Represents excellence, achievement, or special recognition.</p>
+          <p>🔥 Fire: Indicates something that is trendy, hot, or on fire.</p>
+          <p>👍 Thumbs Up: A positive gesture or agreement.</p>
+          <p>🌈 Rainbow: Symbolizes diversity, inclusivity, or positivity.</p>
+          <p>❤️ Red Heart: Represents love, affection, or approval.</p>
+          <p><i class="fas fa-atom"></i> Welcome to your Electron application.</p> -->
+          <button class="btn btn-primary">Click me - a Bootstrap Button</button>
+        </div>
+      </div>
+      <br>
+
+
+      <div id="clientupdates" class="paper-area" style="display: none;" >
+        <div>
+          <h4>Client Update Available</h4>
+          <p id="clientversion">VERSION: 1.0.0</p>
+          <p id="clientchanges">Improve the security codes</p>
+        </div>
+      </div>
+
+      <!-- <div id="mainform" class="paper-area">
+        <div>
+          <h1>💖 Hello World!</h1>
+          <p>Welcome to your Electron application.</p>
+        </div>
+        <div>
+          <form id="myForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+  
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+  
+            <button type="button" onclick="submitForm()">Submit</button>
+          </form>
+          <br>
+        </div>
+        <div>
+          <p>
+            This is an example of posting a form in the back-end.
+          </p>
+        </div>
+      </div> -->
+
+    </div>
+
 
     <!-- Chat container -->
     <div class="chat-container">
       <!-- Chat messages -->
       <div class="chat-messages">
-        <div>
-          <div id="welcome" class="paper-area">
-            <center>
-              <h2>🌟Welcome to LaframeRag</h2>
-            </center>
-            <center>
-              <p>
-                This serves as a front-end template tailored for desktop development, leveraging ElectronJS within the Lalulla Framework.
-              </p>
-            </center>
-          </div>
-        </div>
-
-        <!-- deviceID, driveCSerial, macAddress, macid -->
-        <div id="gathered-info" class="paper-area">
-          <div>
-            <table>
-              <tr>
-                <td>
-                  <p id="wsid"><i class="fas fa-atom"></i>DEVICE ID </p>
-                </td>
-                <td>
-                  <p id="hddid"><i class="fas fa-atom"></i>STORAGE SN </p>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <p id="macaddr"><i class="fas fa-atom"></i>MAC ADDRESS </p>
-                </td>
-                <td>
-                  <p id="servertime"><i class="fas fa-atom"></i>SERVER TIME</p>
-                </td>
-              </tr>
-            </table>
-            <!-- <p id="wsid"><i class="fas fa-atom"></i>DEVICE ID </p>
-            <p id="hddid"><i class="fas fa-atom"></i>STORAGE SN </p>
-            <p id="macaddr"><i class="fas fa-atom"></i>MAC ADDRESS </p>
-            <p id="servertime"><i class="fas fa-atom"></i>SERVER TIME</p> -->
-            <!-- <p id="machid"><i class="fas fa-atom"></i>MACH ID </p> -->
-          </div>
-        </div>
-        <br>
-
-        <div>
-          <div id="hightlight" class="paper-area">
-            <div>
-              <h4>💖 Hello World!</h4>
-              <p>Welcome to your ElectronJS boilerplate by Lalulla.</p>
-              <table>
-                <tr>
-                  <td>
-                    <p>🌟 Star: Represents excellence, achievement, or special recognition.</p>
-                  </td>
-                  <td>
-                    <p>🔥 Fire: Indicates something that is trendy, hot, or on fire.</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <p>👍 Thumbs Up: A positive gesture or agreement.</p>
-                  </td>
-                  <td>
-                    <p>🌈 Rainbow: Symbolizes diversity, inclusivity, or positivity.</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <p>❤️ Red Heart: Represents love, affection, or approval.</p>
-                  </td>
-                  <td>
-                    p><i class="fas fa-atom"></i> Welcome to your Electron application.</p>
-                  </td>
-                </tr>
-              </table>
-              <!-- <p>🌟 Star: Represents excellence, achievement, or special recognition.</p>
-              <p>🔥 Fire: Indicates something that is trendy, hot, or on fire.</p>
-              <p>👍 Thumbs Up: A positive gesture or agreement.</p>
-              <p>🌈 Rainbow: Symbolizes diversity, inclusivity, or positivity.</p>
-              <p>❤️ Red Heart: Represents love, affection, or approval.</p>
-              <p><i class="fas fa-atom"></i> Welcome to your Electron application.</p> -->
-              <button class="btn btn-primary">Click me - a Bootstrap Button</button>
-            </div>
-          </div>
-        </div>
-
-        
-        
-      </div> <!-- Chat messages -->
-
-      <div class="chat-input">
-        <input type="text" id="msgSend" placeholder="Type your message...">
-        <button type="button" id="btnSend">Send</button>
+        <!-- Example chat messages -->
+        <div>Message 1</div>
+        <div>Message 2</div>
+        <!-- Add more chat messages here -->
       </div>
 
-    </div> <!-- Chat container -->
+      <!-- Textbox container -->
+      <div class="textbox-container">
+        <!-- Textbox for user input -->
+        <input type="text" class="textbox" placeholder="Type your message...">
+      </div>
+    </div>
 
 
     <!-- Include your external script file -->
@@ -458,16 +486,16 @@
       // ipcRenderer.send('channel', <data to send>)
       // ipcRenderer.send('div-clicked', 'The div was clicked!')
 
-      // function submitForm() {
-      //     const name = document.getElementById('name').value;
-      //     const email = document.getElementById('email').value;
+      function submitForm() {
+          const name = document.getElementById('name').value;
+          const email = document.getElementById('email').value;
 
-      //     if (window.ipcRenderer) {
-      //         window.ipcRenderer.send('form-submission', { name, email });
-      //     } else {
-      //         console.error('ipcRenderer is not defined.');
-      //     }
-      // }
+          if (window.ipcRenderer) {
+              window.ipcRenderer.send('form-submission', { name, email });
+          } else {
+              console.error('ipcRenderer is not defined.');
+          }
+      }
 
       //Call and wait for response
       // document.getElementById('myClickableDiv').addEventListener('click', async () => {
@@ -486,23 +514,6 @@
       //     console.error('Error while waiting for reply:', error);
       //   }
       // });
-
-      document.getElementById('btnSend').addEventListener('click', function() {
-        var messageInput = document.getElementById('msgSend');
-        var message = messageInput.value.trim();
-        
-        if (message !== '') {
-          var chatMessages    = document.querySelector('.chat-messages');
-          var messageElement  = document.createElement('div');
-          messageElement.classList.add('message');
-          messageElement.textContent = message;
-          chatMessages.appendChild(messageElement);
-          
-          // Clear the input field after sending the message
-          messageInput.value = '';
-
-        }
-      });
 
     </script>
 
