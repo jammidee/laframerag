@@ -1,7 +1,7 @@
 {
   "name": "lakuborag",
   "productName": "lakuborag",
-  "version": "1.5.137",
+  "version": "1.5.142",
   "description": "Lalulla AI Retrieval Augmented Generation (RAG) Boilerplate",
   "main": "src/index.js",
   "scripts": {
@@ -12,10 +12,7 @@
     "lint": "echo \"No linting configured\""
   },
   "keywords": [],
-  "author": {
-    "name": "Jammi Dee",
-    "email": "jammi_dee@yahoo.com"
-  },
+  "author": "Jammi Dee <jammi_dee@yahoo.com>",
   "permissions": [
     "videoCapture",
     "audioCapture"
@@ -71,5 +68,13 @@
         }
       ]
     }
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jammidee/laframerag.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jammidee/laframerag/issues"
+  },
+  "homepage": "https://github.com/jammidee/laframerag#readme"
 }

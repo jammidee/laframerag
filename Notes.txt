@@ -81,6 +81,8 @@ npm install uuid --save 02/05/2024
 npm install xml2js --save 03/06/2024
 
 
+
+
 GIT - G1thUUb@!!M3
 ---
 
@@ -104,6 +106,14 @@ git remote -v
 git status
 git log
 git log --all --graph
+
+CLONING:
+
+git clone https://github.com/jammidee/laframetron.git lakuborag
+git remote -v
+git remote set-url origin https://github.com/jammidee/laframerag.git
+git pull origin main
+
 
 TODO:
 - Add PC info extraction page

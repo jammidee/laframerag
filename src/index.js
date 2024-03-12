@@ -68,7 +68,7 @@ var glovars = {
 
   username:       "sadmin",
   entityid:       "LALULLA",
-  appid:          "TRON",
+  appid:          "RAG",
   roleid:         "USER",
   locked:         "YES",
   allowlogon:     "NO"
@@ -80,8 +80,8 @@ var glovars = {
 // Function to copy the example .env file if it doesn't exist
 //=============================================================
 const initializeEnvFile = () => {
-  const envFilePath = path.join(__dirname, './.env');
-  const exampleEnvFilePath = path.join(__dirname, 'resources', 'app', 'src',  'assets', 'env.sample');
+  const envFilePath = path.join(process.cwd(), './.env');
+  const exampleEnvFilePath = path.join(__dirname,'../env.sample');
 
   if (!fs.existsSync(envFilePath)) {
     const exampleEnvContent = fs.readFileSync(exampleEnvFilePath, 'utf-8');
@@ -139,7 +139,7 @@ const createWindow = () => {
   // and load the index.html of the app.
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
 
-  const pagedata = { title: process.env.PAGE_INDEX_TITLE || 'Electron' };
+  const pagedata = { title: process.env.PAGE_INDEX_TITLE || 'Lalula Rag' };
 
   // mainWindow.webContents.on('dom-ready', () => {
   //   mainWindow.webContents.executeJavaScript(`document.title = "${pagedata.title}";`);
