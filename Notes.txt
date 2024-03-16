@@ -80,7 +80,14 @@ npm install uuid --save 02/05/2024
 
 npm install xml2js --save 03/06/2024
 
+==============
+MAIN PACKAGES
+==============
+npm install @nlpjs/basic --save 03/16/2024
+npm install @nlpjs/express-api-server --save 03/16/2024
+npm install @nlpjs/directline-connector --save 03/16/2024
 
+npm install node-nlp --save 03/16/2024
 
 
 GIT - G1thUUb@!!M3

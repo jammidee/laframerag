@@ -12,6 +12,12 @@ Tested / QA by:				Jammi Dee
 
 03/16/2024  - Added switch to control the checking of the server
             - Added basic send and response in hello world.
+            - Added npm node-nlp, 
+              @nlpjs/basic, 
+              @nlpjs/express-api-server, 
+              @nlpjs/directline-connector libraries
+            - Added conf.json, corpus-en.json, pipelines.md
+            - Added qna.tsv file
             - 
 
 03/12/2024  - started clean up of the migrated report
