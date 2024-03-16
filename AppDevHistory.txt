@@ -11,7 +11,9 @@ Developed / Programmed by : Joel Margate Damaso aka Jammi Dee
 Tested / QA by:				Jammi Dee
 
 03/16/2024  - Added switch to control the checking of the server
+            - Added basic send and response in hello world.
             - 
+
 03/12/2024  - started clean up of the migrated report
             - Initial Chat UI design started
             - 

@@ -501,7 +501,16 @@
           // Clear the input field after sending the message
           messageInput.value = '';
 
-        }
+          const params = { message };
+          const { reply } = ipcRenderer.sendSync('req-ai-answer', params );
+
+          var replyElement  = document.createElement('div');
+          replyElement.classList.add('message');
+          replyElement.textContent = reply;
+          chatMessages.appendChild(replyElement);
+
+        };
+
       });
 
     </script>

@@ -686,6 +686,12 @@ ipcMain.on('global-update-token', function (event, { token, userData }) {
 
 });
 
+ipcMain.on('req-ai-answer', async (event, params) => {
+
+  const reply = "Hello world!";
+  event.returnValue = { reply };
+
+});
 
 //=======================================
 // Listen to all IPC calls and handle it
