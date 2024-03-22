@@ -121,6 +121,15 @@ git remote -v
 git remote set-url origin https://github.com/jammidee/laframerag.git
 git pull origin main
 
+CLONING SAME REPO:
+git clone https://github.com/jammidee/laframerag.git lakuborag
+cd lakuborag
+npm install
+npm install –no-optional
+npm install --global windows-build-tools@4.0.0
+
+choco install python visualcpp-build-tools -y
+
 
 TODO:
 - Add PC info extraction page

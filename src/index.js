@@ -693,6 +693,11 @@ ipcMain.on('req-ai-answer', async (event, params) => {
 
 });
 
+//====================================================
+// This is the pure NLP section. You can comment out
+// this section to remove NLP libraries and pure on 
+// AI Models.
+//====================================================
 const { dockStart } = require('@nlpjs/basic');
 
 (async () => {
@@ -702,6 +707,8 @@ const { dockStart } = require('@nlpjs/basic');
   const response = await nlp.process('en', 'Who are you');
   console.log(response);
 })();
+
+// NLP Section ========================================
 
 //=======================================
 // Listen to all IPC calls and handle it
