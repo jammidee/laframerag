@@ -89,6 +89,13 @@ npm install @nlpjs/directline-connector --save 03/16/2024
 
 npm install node-nlp --save 03/16/2024
 
+=================
+AI MODEL PACKAGES
+=================
+npm install ollama --save 03/22/2024
+
+
+
 
 GIT - G1thUUb@!!M3
 ---
