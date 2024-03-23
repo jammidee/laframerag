@@ -449,69 +449,56 @@
         // const iniForm = document.getElementById('mainform');
         // iniForm.style.display = 'none';
 
-      }
-
-      //==================================
-      // Custom page events and functions
-      //==================================
-      
-      // ipcRenderer.send('channel', <data to send>)
-      // ipcRenderer.send('div-clicked', 'The div was clicked!')
-
-      // function submitForm() {
-      //     const name = document.getElementById('name').value;
-      //     const email = document.getElementById('email').value;
-
-      //     if (window.ipcRenderer) {
-      //         window.ipcRenderer.send('form-submission', { name, email });
-      //     } else {
-      //         console.error('ipcRenderer is not defined.');
-      //     }
-      // }
-
-      //Call and wait for response
-      // document.getElementById('myClickableDiv').addEventListener('click', async () => {
-      //   try {
-      //     const response = await ipcRenderer.invoke('div-clicked', 'The div was clicked!');
-      //     console.log('Received reply from main process:', response);
-
-      //     //alert( response );
-      //     await Swal.fire({
-      //       title: 'Div Clicked!',
-      //       text: response,
-      //       icon: 'success',
-      //     });
-
-      //   } catch (error) {
-      //     console.error('Error while waiting for reply:', error);
-      //   }
-      // });
+      };
 
       document.getElementById('btnSend').addEventListener('click', function() {
-        var messageInput = document.getElementById('msgSend');
-        var message = messageInput.value.trim();
-        
+
+        sendMessage();
+
+      });
+
+      document.getElementById('msgSend').addEventListener('keypress', function() {
+        if (event.keyCode === 13) {
+          event.preventDefault();
+          sendMessage();
+        }
+      });
+
+      function sendMessage(){
+
+        var msgInput = document.getElementById('msgSend');
+        var message = msgInput.value.trim();
+
         if (message !== '') {
           var chatMessages    = document.querySelector('.chat-messages');
           var messageElement  = document.createElement('div');
-          messageElement.classList.add('message');
+          var elemSpacer      = document.createElement('br');
+          var elemLine        = document.createElement('br');
+
+          messageElement.classList.add('paper-area');
           messageElement.textContent = message;
+
+          chatMessages.appendChild(elemSpacer);
           chatMessages.appendChild(messageElement);
           
           // Clear the input field after sending the message
-          messageInput.value = '';
+          msgInput.value = '';
 
           const params = { message };
-          const { reply } = ipcRenderer.sendSync('req-ai-answer', params );
+          const { htmlResp } = ipcRenderer.sendSync('req-ai-answer', params );
+
+          //alert( response );
 
           var replyElement  = document.createElement('div');
-          replyElement.classList.add('message');
-          replyElement.textContent = reply;
+          replyElement.classList.add('paper-area');
+          replyElement.innerHTML  = htmlResp;
+          chatMessages.appendChild(elemLine);
           chatMessages.appendChild(replyElement);
 
         };
 
-      });
+      };
+
 
     </script>
 

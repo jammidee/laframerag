@@ -138,6 +138,45 @@ npm install --global windows-build-tools@4.0.0
 choco install python visualcpp-build-tools -y
 
 
+=======================
+WSL2 SUBSYSTEM / UBUNTU
+=======================
+
+sudo apt install net-tools
+
+Regular PowerShell:
+notepad ($env:USERPROFILE+"\.wslconfig")
+
+Elevated Powershell:
+Get-NetFirewallHyperVVMCreator
+
+if there is a value, disable NetFirewall:
+Set-NetFirewallHyperVVMSetting -Name ((Get-NetFirewallHyperVVMCreator).VMCreatorId) -Enabled False
+
+New-NetFirewallHyperVRule `
+-DisplayName 'Allow All Inbound Traffic to WSL in Private Network' `
+-Name 'WSL Private Inbound Rule' `
+-Profiles Private `
+-Direction Inbound `
+-Action Allow `
+-VMCreatorId ((Get-NetFirewallHyperVVMCreator).VMCreatorId) `
+-Enabled True
+
+TESTING OLLAMA on UBUNTU
+curl -X POST http://localhost:11434/api/generate -d '{
+  "model": "llama2",
+  "prompt":"Why is the sky blue?"
+ }'
+
+ TESTING OLLAMA USING PS:
+Invoke-WebRequest -Uri "http://localhost:11434/api/generate" -Method POST -Body '{
+  "model": "llama2",
+  "prompt":"Why is the sky blue?"
+}'
+
+
+
+
 TODO:
 - Add PC info extraction page
 - Report using PDF maker

@@ -42,6 +42,9 @@ const osInfo                = osUtils.os;
 
 const axios                 = require('axios');
 
+const ollama                = require('./libs/SimplyOllama');
+//const ollama = require('ollama/browser');
+
 //Custom library
 const libt = require('./libs/lalibtools');
 const { checkForUpdates } = require('./libs/update-checker');
@@ -688,8 +691,51 @@ ipcMain.on('global-update-token', function (event, { token, userData }) {
 
 ipcMain.on('req-ai-answer', async (event, params) => {
 
-  const reply = "Hello world!";
-  event.returnValue = { reply };
+  let modelResponse = "";
+  // let chatConfig = {
+  //   model: "llama2",
+  //   role: "user",
+  //   content: "Why is the sky blue?"
+  // };
+
+  const { message } = params;
+  let chatConfig = { 
+    "messages": [ 
+      { "role": "system", "content": "Always answer in rhymes." },
+      { "role": "system", "content": "Always return the answer. Not the questions." },
+      { "role": "user", "content": message }
+    ], 
+    "temperature": 0.7, 
+    "max_tokens": -1,
+    "stream": true
+  };
+
+  async function invokeLLM(props) {
+
+    console.log(`-----`)
+    //console.log(`[${props.model}]: ${props.content}`)
+    //console.log(`-----`)
+
+    try {
+
+      console.log(`Running prompt...`)
+      const response = await ollama.chat(props);
+      
+      //console.log(`${response}\n`);
+      const htmlResp = response.replace(/\n/g, '<br>');
+      console.log(`${htmlResp}\n`);
+      event.returnValue = { htmlResp };
+
+    }catch(error) {
+      
+      console.log(`Query failed!`)
+      console.log(error)
+
+    };
+
+  };
+
+  invokeLLM(chatConfig);
 
 });
 
@@ -698,15 +744,15 @@ ipcMain.on('req-ai-answer', async (event, params) => {
 // this section to remove NLP libraries and pure on 
 // AI Models.
 //====================================================
-const { dockStart } = require('@nlpjs/basic');
+// const { dockStart } = require('@nlpjs/basic');
 
-(async () => {
-  const dock = await dockStart();
-  const nlp = dock.get('nlp');
-  //await nlp.train();
-  const response = await nlp.process('en', 'Who are you');
-  console.log(response);
-})();
+// (async () => {
+//   const dock = await dockStart();
+//   const nlp = dock.get('nlp');
+//   //await nlp.train();
+//   const response = await nlp.process('en', 'Who are you');
+//   console.log(response);
+// })();
 
 // NLP Section ========================================
 

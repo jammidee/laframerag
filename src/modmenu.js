@@ -177,7 +177,7 @@ function createMainMenu(app, mainWindow, gvars, gshow ) {
             },
             {
               label: 'Open Audit',
-              accelerator: 'CmdOrAtl+O',
+              //accelerator: 'CmdOrAtl+O',
               click: async () => {
 
                 createAuditWindow( mainWindow, gvars );
