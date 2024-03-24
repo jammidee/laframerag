@@ -25,8 +25,10 @@
 const axios = require('axios');
 
 class SimplyOllama {
+
     constructor(baseURL) {
-        this.baseURL = baseURL || 'http://localhost:11434/v1';
+        this.baseURL    = baseURL || 'http://127.0.0.1:11434';
+        this.subURL     = 'v1';
     }
 
     async generate(request) {
@@ -42,7 +44,8 @@ class SimplyOllama {
     }
 
     async chat(request) {
-        const url = `${this.baseURL}/chat/completions`;
+        //const url = `${this.baseURL}/chat/completions`;
+        const url = `${this.baseURL}/chat`;
         
         try {
 
@@ -54,12 +57,49 @@ class SimplyOllama {
 
             let contentValue = "";
             lines.forEach(line => {
+
+                console.log(`--> ${JSON.stringify(line)}`);
+                const jline = JSON.parse( line );
+                const jsonData = jline.message.content;
+                const jsonDone = jline.done;
+
+                contentValue += jsonData;
+
+            });
+
+            //console.log(contentValue);
+
+            return contentValue;
+
+
+        } catch (error) {
+            console.error('Error fetching response:', error);
+            throw error;
+        };
+    };
+
+    //LM Studio version
+    async chatlms(request) {
+        const url = `${this.baseURL}/${this.subURL}/chat/completions`;
+        
+        try {
+
+            const response = await axios.post(url, request);
+
+            //console.log(`--> ${JSON.stringify(response.data)}`);
+
+            const lines = response.data.split('\n').filter(Boolean);
+
+            let contentValue = "";
+            lines.forEach(line => {
+
                 // Split the line by ":"
                 const parts = line.split(':');
             
                 // Get the right side (value) of the split
                 const value = parts.slice(1).join(':').trim();
                 if( value !== "[DONE]"){
+
                     const jsonData = JSON.parse(value);
                     if( jsonData.choices[0].delta.content !== undefined ){
                         contentValue += jsonData.choices[0].delta.content;
@@ -77,13 +117,19 @@ class SimplyOllama {
         } catch (error) {
             console.error('Error fetching response:', error);
             throw error;
-        }
-    }
+        };
+    };
 
     setBaseURL(newBaseURL) {
         this.baseURL = newBaseURL;
-    }
-}
+    };
+
+    // Method to set suburl
+    setSubURL(suburl) {
+        this.subURL = suburl;
+    };
+
+};
 
 const simplyOllama = new SimplyOllama(); // Create an instance of SimplyOllama
 

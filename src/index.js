@@ -700,6 +700,7 @@ ipcMain.on('req-ai-answer', async (event, params) => {
 
   const { message } = params;
   let chatConfig = { 
+    "model": "llama2",
     "messages": [ 
       { "role": "system", "content": "Always answer in rhymes." },
       { "role": "system", "content": "Always return the answer. Not the questions." },
@@ -719,11 +720,13 @@ ipcMain.on('req-ai-answer', async (event, params) => {
     try {
 
       console.log(`Running prompt...`)
+
       const response = await ollama.chat(props);
       
       //console.log(`${response}\n`);
       const htmlResp = response.replace(/\n/g, '<br>');
       console.log(`${htmlResp}\n`);
+
       event.returnValue = { htmlResp };
 
     }catch(error) {
